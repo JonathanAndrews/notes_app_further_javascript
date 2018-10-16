@@ -1,0 +1,22 @@
+{
+  "name": "notes_app",
+  "version": "1.0.0",
+  "description": "No framework Note Web App.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonathanAndrews/notes_app_further_javascript.git"
+  },
+  "author": "Jonathan Andrews",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JonathanAndrews/notes_app_further_javascript/issues"
+  },
+  "homepage": "https://github.com/JonathanAndrews/notes_app_further_javascript#readme",
+  "dependencies": {
+    "http-server": "^0.11.1"
+  }
+}
