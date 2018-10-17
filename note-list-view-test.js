@@ -1,5 +1,5 @@
 function testNoteListViewTakesNoteList() {
-    var list = new NoteList;
+    var list = new NoteList();
     var view = new NoteListView(list);
     assert.isTrue(view.list === list);
 } 
@@ -7,7 +7,7 @@ function testNoteListViewTakesNoteList() {
 testNoteListViewTakesNoteList();
 
 function testNoteListViewHasHTMLStringify() {
-    var list = new NoteList
+    var list = new NoteList()
     list.addNote("1st Note")
     list.addNote("2nd Note")
     var view = new NoteListView(list)
@@ -27,3 +27,15 @@ function testHTMLStringifyWorksForNoNotes() {
 }
 
 testHTMLStringifyWorksForNoNotes();
+
+function testHTMLStringifyMethodOnlyDisplays1st20Chars() {
+    var list = new NoteList()
+    list.addNote("123456789012345678901234567890")
+    list.addNote("2nd Note")
+    var view = new NoteListView(list)
+    var htmlString = "<ul><li><div>12345678901234567890</div></li><li><div>2nd Note</div></li></ul>"
+    console.log(view.htmlStringify())
+    assert.isTrue(view.htmlStringify() === htmlString)
+}
+
+testHTMLStringifyMethodOnlyDisplays1st20Chars()

@@ -7,7 +7,9 @@
         var notesArray = this.list.getNotes();
         var htmlString = "<ul>"
         for (var i = 0; i < notesArray.length; i++) {
-            htmlString += "<li><div>" + notesArray[i].textReader() + "</div></li>"
+            var wholeString = notesArray[i].textReader();
+            var previewString = wholeString.substring(0,20);
+            htmlString += "<li><div>" + previewString + "</div></li>"
         }
         htmlString += "</ul>"
         return htmlString
