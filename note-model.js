@@ -1,14 +1,15 @@
 (function(exports) {
-    function Note(input) {
-        this.text = input;
+    function Note(textInput, idInput) {
+        this.text = textInput;
+        this.id = idInput;
     };
 
     Note.prototype.textReader = function() {
         return this.text;
     };
 
-    function noteFactory(input) {
-        return new Note(input);
+    function noteFactory(textInput, idInput) {
+        return new Note(textInput, idInput);
     }
 
     exports.noteFactory = noteFactory;

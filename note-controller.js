@@ -8,12 +8,40 @@
     NoteController.prototype.insertNoteIntoHTML = function () {
       var element = document.getElementById('app')
       element.innerHTML = this.noteListView.htmlStringify();
-  
     };
+
+    
+
+    NoteController.prototype.makeUrlChangeShowNoteForCurrentPage = function () {
+      var boundShowNoteForCurrentPage = this.showNoteForCurrentPage.bind(this)
+      window.addEventListener("hashchange", boundShowNoteForCurrentPage);
+    };
+
+    NoteController.prototype.showNoteForCurrentPage = function() {
+      var noteId = this.getNoteIdFromUrl(window.location);
+      var arrayOfNotes = this.noteListView.list.getNotes() 
+      var note = arrayOfNotes.find(function(individualNote) {
+        return individualNote.id === parseInt(noteId)
+      })
+      this.showNote(note);
+    };
+
+    NoteController.prototype.getNoteIdFromUrl = function (location) {
+      return location.hash.split("#notes/")[1];
+    }
+
+    NoteController.prototype.showNote = function (note) {
+      var singleNoteView = new SingleNoteView(note)
+      var element = document.getElementById('app');
+      element.innerHTML = singleNoteView.htmlStringifyOneNote();
+    }
+
+
     exports.NoteController = NoteController;
-  
   })(this);
   
   
   var noteController = new NoteController()
   noteController.insertNoteIntoHTML()
+
+  noteController.makeUrlChangeShowNoteForCurrentPage()

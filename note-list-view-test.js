@@ -11,7 +11,7 @@ function testNoteListViewHasHTMLStringify() {
     list.addNote("1st Note")
     list.addNote("2nd Note")
     var view = new NoteListView(list)
-    var htmlString = "<ul><li><div>1st Note</div></li><li><div>2nd Note</div></li></ul>"
+    var htmlString = `<ul><li><div><a href="#notes/0">1st Note</a></div></li><li><div><a href="#notes/1">2nd Note</a></div></li></ul>`
     console.log(view.htmlStringify())
     assert.isTrue(view.htmlStringify() === htmlString)
 }
@@ -33,7 +33,7 @@ function testHTMLStringifyMethodOnlyDisplays1st20Chars() {
     list.addNote("123456789012345678901234567890")
     list.addNote("2nd Note")
     var view = new NoteListView(list)
-    var htmlString = "<ul><li><div>12345678901234567890</div></li><li><div>2nd Note</div></li></ul>"
+    var htmlString = `<ul><li><div><a href="#notes/0">12345678901234567890</a></div></li><li><div><a href="#notes/1">2nd Note</a></div></li></ul>`
     console.log(view.htmlStringify())
     assert.isTrue(view.htmlStringify() === htmlString)
 }

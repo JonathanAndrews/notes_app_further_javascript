@@ -11,3 +11,10 @@ function testNoteHasTextReaderMethod() {
 };
 
 testNoteHasTextReaderMethod();
+
+function testNoteInstantiatesWithId() {
+    var note = noteFactory("My favourite language is JavaScript", 44);
+    assert.isTrue(note.id === 44);
+};
+
+testNoteInstantiatesWithId();

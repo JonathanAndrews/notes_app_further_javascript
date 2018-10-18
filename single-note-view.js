@@ -3,7 +3,7 @@
         this.note = note;
     }
 
-    SingleNoteView.prototype.returnHtmlString = function () {
+    SingleNoteView.prototype.htmlStringifyOneNote = function () {
         return `<div>${this.note.textReader()}</div>`
     }
 

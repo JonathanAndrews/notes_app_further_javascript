@@ -9,7 +9,7 @@
         for (var i = 0; i < notesArray.length; i++) {
             var wholeString = notesArray[i].textReader();
             var previewString = wholeString.substring(0,20);
-            htmlString += "<li><div>" + previewString + "</div></li>"
+            htmlString += `<li><div><a href="#notes/${notesArray[i].id}">${previewString}</a></div></li>`;
         }
         htmlString += "</ul>"
         return htmlString

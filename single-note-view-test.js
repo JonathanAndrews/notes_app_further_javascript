@@ -1,4 +1,4 @@
-function testSingleNoteViewHasReturnHtmlStringMethod() {
+function testSingleNoteViewHasHtmlStringifyOneNoteMethod() {
 
     function NoteDouble() {
     }
@@ -8,10 +8,10 @@ function testSingleNoteViewHasReturnHtmlStringMethod() {
     }
     var note = new NoteDouble() 
     var singleNoteView = new SingleNoteView(note)
-    var htmlString = singleNoteView.returnHtmlString()
+    var htmlString = singleNoteView.htmlStringifyOneNote()
     var expectedString = "<div>Favourite drink: seltzer</div>"
     console.log(htmlString)
     assert.isTrue(htmlString === expectedString);
 } 
 
-testSingleNoteViewHasReturnHtmlStringMethod();
+testSingleNoteViewHasHtmlStringifyOneNoteMethod();

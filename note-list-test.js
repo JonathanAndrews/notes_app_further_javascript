@@ -13,3 +13,21 @@ function testNoteListCanAddNotes() {
 };
 
 testNoteListCanAddNotes();
+
+function testNoteListInitialisesWithIdZero() {
+    var list = new NoteList();
+    assert.isTrue(list.id === 0);
+};
+
+testNoteListInitialisesWithIdZero();
+
+
+function testNoteListsIdAttributeIncrements() {
+    var list = new NoteList();
+    list.addNote("Favourite drink: seltzer")
+    assert.isTrue(list.id === 1);
+    list.addNote("2nd Favourite drink: cola")
+    assert.isTrue(list.id === 2);
+};
+
+testNoteListsIdAttributeIncrements();
