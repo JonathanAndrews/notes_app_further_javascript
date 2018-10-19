@@ -19,10 +19,7 @@
 
     NoteController.prototype.showNoteForCurrentPage = function() {
       var noteId = this.getNoteIdFromUrl(window.location);
-      var arrayOfNotes = this.noteListView.list.getNotes() 
-      var note = arrayOfNotes.find(function(individualNote) {
-        return individualNote.id === parseInt(noteId)
-      })
+      var note = this.noteListView.seeList().findNoteById(noteId) 
       this.showNote(note);
     };
 
@@ -42,6 +39,7 @@
   
   
   var noteController = new NoteController()
+
   noteController.insertNoteIntoHTML()
 
   noteController.makeUrlChangeShowNoteForCurrentPage()

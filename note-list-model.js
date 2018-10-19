@@ -14,5 +14,13 @@
         this.id ++;
     };
 
+    NoteList.prototype.findNoteById = function (idNum) {
+        var arrayOfNotes = this.getNotes() 
+        var note = arrayOfNotes.find(function(individualNote) {
+            return individualNote.id === parseInt(idNum)
+        })
+        return note
+    }
+
     exports.NoteList = NoteList;
 })(this);

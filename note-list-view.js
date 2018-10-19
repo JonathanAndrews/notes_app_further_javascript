@@ -3,6 +3,10 @@
         this.list = input;
     }
 
+    NoteListView.prototype.seeList = function () {
+        return this.list;
+    }
+
     NoteListView.prototype.htmlStringify = function () {
         var notesArray = this.list.getNotes();
         var htmlString = "<ul>"

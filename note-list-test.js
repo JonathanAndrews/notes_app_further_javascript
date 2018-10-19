@@ -31,3 +31,13 @@ function testNoteListsIdAttributeIncrements() {
 };
 
 testNoteListsIdAttributeIncrements();
+
+function testNoteListHasFindNoteMethod() {
+    var list = new NoteList();
+    list.addNote("Favourite drink: seltzer")
+    list.addNote("2nd Favourite drink: cola")
+    var note = list.findNoteById(1)
+    assert.isTrue(note.text === "2nd Favourite drink: cola")
+}
+
+testNoteListHasFindNoteMethod()
